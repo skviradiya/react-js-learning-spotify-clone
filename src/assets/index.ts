@@ -19,3 +19,6 @@ export { default as downArrowIcon } from "./down-arrow.svg";
 export { default as queueIcon } from "./Queue_XS.svg";
 export { default as devicesIcon } from "./Devices_XS.svg";
 export { default as volumeIcon } from "./Volume_XS.svg";
+export { default as backArrowIcon } from "./Back.svg";
+export { default as forwardArrowIcon } from "./Forward.svg";
+export { default as downChevronIcon } from "./down-Chevron.svg";

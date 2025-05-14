@@ -36,16 +36,29 @@ export default function CenterControls() {
     const updateTime = () => {
       setCurrentTime(audio.currentTime);
     };
+
     const setAudioDuration = () => setDuration(audio.duration);
 
     audio.addEventListener("timeupdate", updateTime);
     audio.addEventListener("loadedmetadata", setAudioDuration);
 
+    // Event listener for spacebar to toggle play/pause
+    const handleSpaceBarPress = (event: KeyboardEvent) => {
+      if (event.code === "Space") {
+        event.preventDefault(); // Prevents the default spacebar action (scrolling the page)
+        togglePlayPause();
+      }
+    };
+
+    // Add keydown event listener
+    window.addEventListener("keydown", handleSpaceBarPress);
+
     return () => {
       audio.removeEventListener("timeupdate", updateTime);
       audio.removeEventListener("loadedmetadata", setAudioDuration);
+      window.removeEventListener("keydown", handleSpaceBarPress); // Clean up the event listener
     };
-  }, []);
+  }, [isPlay]);
 
   return (
     <div className="flex flex-1 flex-col justify-center">

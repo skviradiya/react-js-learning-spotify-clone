@@ -1,9 +1,9 @@
 // layouts/AppLayout.tsx
+import Header from "@src/components/custom/Header/Header";
 import React from "react";
-import Header from "@src/components/Header/Header";
-import Sidebar from "./components/Sidebar/Sidebar";
 import { Outlet } from "react-router";
-import PlayerBar from "./components/PlayerBar/PlayerBar";
+import PlayerBar from "./components/custom/PlayerBar/PlayerBar";
+import Sidebar from "./components/custom/Sidebar/Sidebar";
 
 const AppLayout: React.FC = () => {
   return (
